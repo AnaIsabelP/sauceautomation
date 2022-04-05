@@ -1,0 +1,20 @@
+{
+  "name": "sauceautomation",
+  "version": "1.0.0",
+  "description": "sauce demo automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "automation",
+    "sauce",
+    "qa",
+    "cypress"
+  ],
+  "author": "AnaIsabelP",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.5.3"
+  }
+}
