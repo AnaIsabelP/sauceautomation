@@ -23,3 +23,32 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import selector from './selector'
+
+//Este es el comando de login de sauce.js
+Cypress.Commands.add('login',(username,password)=>{
+
+    cy.get(selector.username).should('be.visible')
+    cy.get(selector.username).type(username)
+    cy.get(selector.password).type(password)
+
+    cy.get(selector.loginButton).click()
+})
+
+import cartselector from './cartselector'
+//este comando es para agregar al carrito
+
+Cypress.Commands.add('purchasingProcess',(firstName,lastName,postalCode)=>{
+
+    cy.get(cartselector.add2cart).click()
+    cy.get(cartselector.cartBadge).should('be.visible')
+    cy.get(cartselector.go2cart).click()
+    cy.get(cartselector.checkoutButton).click()
+    cy.get(cartselector.firstName).type(firstName)
+    cy.get(cartselector.lastName).type(lastName)
+    cy.get(cartselector.postalCode).type(postalCode)
+    cy.get(cartselector.continueButton).click()
+    cy.get(cartselector.finishButton).click()
+
+})
