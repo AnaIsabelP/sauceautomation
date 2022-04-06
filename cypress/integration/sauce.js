@@ -2,7 +2,7 @@
 
 describe('Purchasing process',()=>{
     before(()=>{
-        cy.visit('/'); //esto llama a lo que está en cypress.json (la url del sitio)
+        cy.visit('/'); //esto llama a la url desde cypress.json
     })
     it('login and purchasing process',()=>{
         //LOGIN
@@ -26,12 +26,4 @@ describe('Purchasing process',()=>{
         cy.get('.title').contains('Checkout: Complete!')
 
      })
-
-
-    /*it('shopping',()=>{ así con este caso por acá siempre me sale error, debe ser porq no se puede acceder a comparar sin loguearrse antes
-        cy.get ('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-        cy.get ('.shopping_cart_badge').should('be.visible');
-        cy.get ('.shopping_cart_link').click();
-        cy.get ('[data-test="checkout"]').click();
-    })*/
 })
